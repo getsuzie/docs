@@ -1,0 +1,3 @@
+# Varnish Cache
+
+Empty
