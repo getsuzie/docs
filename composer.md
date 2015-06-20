@@ -30,7 +30,7 @@ And then run:
 $ composer install
 ```
 
-#### Managing plugins with composer
+## Managing plugins with composer
 
 You can also manage your plugins with composer. First to find a list of plugins we visit:
 
