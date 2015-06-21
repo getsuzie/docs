@@ -1,6 +1,6 @@
 # Scheduler
 
-It's pretty common at some point during a site build you may need to schedule the odd task but this would traditionally mean setting a CRON job for each. To avoid the confusion of multiple CRON jobs and there different settings we rely on the Scheduler which requires just one CRON for your entire site. Its a stripped down version of [Laravels Scheduler]( http://laravel.com/docs/5.0/artisan#scheduling-artisan-commands).
+It's pretty common at some point during a site build you may need to schedule the odd task but this would traditionally mean setting a CRON job for each. To avoid the confusion of multiple CRON jobs and their different settings we rely on the Scheduler which requires just one CRON for your entire site. Its a stripped down version of [Laravels Scheduler]( http://laravel.com/docs/5.0/artisan#scheduling-artisan-commands).
 
 ### Set Up
 
