@@ -55,8 +55,8 @@ If you want to use a CDN with S3 you should look into [CloudFront](http://aws.am
 
 `http://bigbite-xxx.cloudfront.net`
 
-Then in your `.env` you can just update the S3 URL with this:
+Then in your `.env` you can just update the CDN_URL with this:
 
 ```
-S3_URL=http://bigbite-xxx.cloudfront.net/
+CDN_URL=http://bigbite-xxx.cloudfront.net/
 ```
