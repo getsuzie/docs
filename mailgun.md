@@ -6,15 +6,8 @@ It considered bad practise to send mail through your own server instead a lot of
 
 Sign up for account at [Mailgun](http://www.mailgun.com/). Once signed up you can go Domains -> Add Your Domain. If I was setting one up for `bigbitecreative.com` I would enter into the box: `mg.bigbitecreative.com`. You will be asked to make some changes to DNS, once these are completed you should see this at the top of your settings:
 
-```
-State: Active
-IP Address: 111.122.133.144
-SMTP Hostname: smtp.mailgun.org
-Default SMTP Login: user@mg.bigbitecreative.com
-Default Password: xxxxxxxxxxxxxxxxxx
-API Base URL: https://api.mailgun.net/v3/bigbitecreative.com
-API Key: key-myapikey-here
-```
+![alt text](http://getsuzie.com/assets/images/docs/mailgun.png "mailgun")
+
 Now lets open the `.env` and you see some mailgun settings:
 
 ```
