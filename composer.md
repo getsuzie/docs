@@ -36,8 +36,7 @@ You can also manage your plugins with composer. First to find a list of plugins 
 
 http://wpackagist.org/
 
-Lets add Advanced Custom Fields, open the `
-composer.json` again and visit the `require` section. and at the bottom add:
+Lets add Advanced Custom Fields, open the `composer.json` again and visit the `require` section. and at the bottom add:
 ```json
 "wpackagist-plugin/advanced-custom-fields": "4.4.2"
 ```
