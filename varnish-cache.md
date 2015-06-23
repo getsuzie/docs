@@ -1,13 +1,13 @@
 # Varnish Cache
 
-Varnish is great way to speed up your site. Its actually super simple to set up and Suzie will clear your cache any time a post/page is added, updated or deleted. To use Varnish please open `.env`
+Varnish is great way to speed up your site. It is actually super simple to set up and Suzie will clear your cache any time a post/page is added, updated or deleted. To use Varnish please open `.env`
 
 ```
 VARNISH_PATH=http://domain.com/.*
 VARNISH_ENABLED=true
 ```
 
-On your server please use following Varnish config:
+On your server please use the following Varnish config:
 
 ```
 vcl 4.0;
@@ -56,7 +56,7 @@ sub vcl_backend_response {
 
 ## Installing Varnish
 
-If your not sure how to install Varnish, below is a guide of using it with either Apache or Nginx on Ubuntu 14. SSH into your servr and run the following five commands.
+If you're not sure how to install Varnish, below is a guide of using it with either Apache or Nginx on Ubuntu 14. To start SSH into your server and run the following five commands.
 
 ```
 apt-get install apt-transport-https
@@ -76,7 +76,7 @@ apt-get install varnish
 
 ### Configuring Varnish
 
-Now we need to configure to run on port 80. Run to open main config file:
+Now we need to configure to run on port 80. Run this to open main config file:
 
 ```
 sudo nano /etc/default/varnish
@@ -89,7 +89,7 @@ DAEMON_OPTS="-a :80 \
             -S /etc/varnish/secret \
             -s malloc,256m"
 ```
-Now lets open the config file that tells Varnish how to handle request.
+Now lets open the config file that tells Varnish how to handle the request.
 
 ```
 sudo nano /etc/varnish/default.vcl
@@ -99,7 +99,7 @@ Make this file match the config at the start of this section.
 
 ### Working with Apache
 
-We need to tell apache to run port 8080 now. Let's open `ports.conf`
+We now need to tell apache to run port 8080. Let's open `ports.conf`
 ```
 sudo nano /etc/apache2/ports.conf
 ```
