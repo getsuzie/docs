@@ -32,7 +32,23 @@ Now we need to give everyone read access. Paste the following in, replacing `buc
   ]
 }
 ```
-And click `Save`. Now the last thing you will need is your access details to allow WordPress to upload files. At the top of window click on your name, for me `Jason Agnew` then `Security Credentials`. On the left of the new screen select `Users`
+And click `Save`. Just like you did with `Edit bucket policy`, select `Add CORS Configuration` and paste the following in:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+        <AllowedHeader>Content-*</AllowedHeader>
+        <AllowedHeader>Host</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
+```
+
+Now the last thing you will need is your access details to allow WordPress to upload files. At the top of window click on your name, for me `Jason Agnew` then `Security Credentials`. On the left of the new screen select `Users`
 
 ![alt text](http://getsuzie.com/assets/images/docs/s3-5.png "S3-5")
 
