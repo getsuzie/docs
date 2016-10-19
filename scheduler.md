@@ -1,6 +1,6 @@
 # Scheduler
 
-It's pretty common at some point during a site build you may need to schedule the odd task but this would traditionally mean setting a CRON job for each. To avoid the confusion of multiple CRON jobs and their different settings we rely on the Scheduler which requires just one CRON for your entire site. Its a stripped down version of [Laravels Scheduler]( http://laravel.com/docs/5.0/artisan#scheduling-artisan-commands).
+It's pretty common at some point during a site build to find you need to schedule the odd task. This would traditionally mean setting a CRON job for each. To avoid the confusion of multiple CRON jobs and their different settings we can rely on the Scheduler, which requires just one CRON for your entire site. Its a stripped down version of [Laravels Scheduler]( http://laravel.com/docs/5.0/artisan#scheduling-artisan-commands).
 
 ### Set Up
 
@@ -14,7 +14,7 @@ To clarify if the path to my site was:
 ```
 /var/www/my-new-wordpress-site/
 ```
-Then the CRON would be
+Then the CRON would be:
 ```
 * * * * * php /var/www/my-new-wordpress-site/suzie/bootstrap/scheduler.php 1>> /dev/null 2>&1
 ```

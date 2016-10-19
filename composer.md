@@ -15,7 +15,7 @@ If you move down a little instead the `composer.json` you will see the `require`
    "johnpbloch/wordpress": "4.2.*"
  }
 ```
-You can change this to the specific version you need or leave it as is. For this example lets say `4.2.2` broke some compatibility so I required an earlier version I could checkout which versions are available:
+You can change this to a specific version you need or leave it as is. For this example lets say `4.2.2` broke some compatibility so I required an earlier version I could checkout which versions are available:
 
 https://github.com/johnpbloch/wordpress/releases
 
@@ -25,7 +25,7 @@ Then update my `composer.json` to:
    "johnpbloch/wordpress": "4.1.4"
  }
 ```
-And then run:
+Followed by running:
 ```
 $ composer install
 ```
@@ -36,11 +36,11 @@ You can also manage your plugins with composer. First to find a list of plugins 
 
 http://wpackagist.org/
 
-Lets add Advanced Custom Fields, open the `composer.json` again and visit the `require` section. and at the bottom add:
+Lets add Advanced Custom Fields. Open the `composer.json` again, visit the `require` section and at the bottom add:
 ```json
 "wpackagist-plugin/advanced-custom-fields": "4.4.2"
 ```
-So it should like so:
+So it looks like so:
 ``` json
 "require": {
    "johnpbloch/wordpress": "4.1.4",

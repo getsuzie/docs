@@ -1,10 +1,10 @@
 # S3/SFTP Assets
 
-Instead of storing assets/media (uploaded through the WordPress dashboard) on single server or in Git, Suzie will upload them to either S3 or SFTP. At first the asset will be uploaded to the server that's in use, then it will be moved to remote storage.
+Instead of storing assets/media (uploaded through the WordPress dashboard) on a single server or in Git, Suzie will upload them to either S3 or SFTP. At first the asset will be uploaded to the server that's in use, then it will be moved to remote storage.
 
 ## Amazon S3
 
-Let's go through setting up a bucket to use with Suzie. For this example I'll set one up for to use with `bigbitecreative.com`. Now sign up to [AWS](http://aws.amazon.com) and go to the S3 section:
+Let's go through setting up a bucket to use with Suzie. For this example I'll set one up for to use with `bigbitecreative.com`. First sign up to [AWS](http://aws.amazon.com) and go to the S3 section:
 
 ![alt text](http://getsuzie.com/assets/images/docs/s3-1.png "S3-1")
 
@@ -32,7 +32,7 @@ Now we need to give everyone read access. Paste the following in, replacing `buc
   ]
 }
 ```
-And click `Save`. Just like you did with `Edit bucket policy`, select `Add CORS Configuration` and paste the following in:
+Now click `Save`. Just like you did with `Edit bucket policy`, select `Add CORS Configuration` and paste the following in:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -47,8 +47,7 @@ And click `Save`. Just like you did with `Edit bucket policy`, select `Add CORS 
     </CORSRule>
 </CORSConfiguration>
 ```
-
-Now the last thing you will need is your access details to allow WordPress to upload files. At the top of window click on your name, for me `Jason Agnew` then `Security Credentials`. On the left of the new screen select `Users`
+Now the last thing you will need is your access details to allow WordPress to upload files. At the top of window click on your name (for me `Jason Agnew`) then `Security Credentials`. On the left of the new screen select `Users`:
 
 ![alt text](http://getsuzie.com/assets/images/docs/s3-5.png "S3-5")
 
