@@ -7,46 +7,22 @@ Its good practise to use a CDN (content delivery network) on your site. It has t
 
 The general set up for this is a subdomain like `cdn.bigbitecreative.com` that points to a CDN provider. If the file exists the CDN serves the file. Otherwise it will load it from your server.
 
-However this set up won't work for us as we're using S3 for assets. Therefore we need a way to move javascript and CSS files over to S3 during deployments. To solve this Suzie has a small task attached to `composer install` which will move any files you have defined in your `wp-config.php` to S3.
+However this set up won't work for us as we're using S3/SFTP for assets. Therefore we need to use two CDNs, one for the site so any CSS, JS etc. and one for the remote assets on S3/SFTP.
 
-## Defining Files
+## Defining CDNs
 
-Open your `wp-config.php` and near the bottom:
-
-``` php
-/**
- * Suzie
- * use {theme} or {plugin}
- */
-define('SUZIE_CDN_THEME', 'bbwp');
-define('SUZIE_CDN_ASSETS', json_encode([
-
-]));
-```
-
-You need to supply the name of your theme folder. In this case I'll use `bigbite`:
-
-``` php
-define('SUZIE_CDN_THEME', 'bigbite');
-```
-
-Then `SUZIE_CDN_ASSETS` takes an array of items to upload. Using `{theme}` to link to the theme folder and `{plugin}` to link to the plugin folder:
-
-``` php
-define('SUZIE_CDN_THEME', 'bigbite');
-define('SUZIE_CDN_ASSETS', json_encode([
-  '{theme}/assets/js/app.js',
-  '{theme}/assets/css/app.css',
-  '{theme}/assets/css/app.css',
-  '{theme}/assets/font/font-name.eot',
-  '{plugin}/contact-form-7/includes/css/styles.css'
-]));
-```
-
-Then in your `.env` enable the cdn:
+In your `.env` enable the site CDN and provide the URL:
 
 ```
-CDN_ENABLED=true
+CDN_SITE_ENABLED=true
+CDN_SITE_URL=https://cdn.bigbitecreative.com
+```
+
+Now for the assets CDN:
+
+```
+CDN_ASSET_ENABLED=true
+CDN_ASSET_URL=https://cdn-assets.bigbitecreative.com
 ```
 
 ## Using a CDN with S3
@@ -55,8 +31,8 @@ If you want to use a CDN with S3 you should look into [CloudFront](http://aws.am
 
 `http://bigbite-xxx.cloudfront.net`
 
-Then in your `.env` you can just update the CDN_URL with this:
+Then in your `.env` you can just update the `CDN_ASSET_URL` with this:
 
 ```
-CDN_URL=http://bigbite-xxx.cloudfront.net/
+CDN_ASSET_URL=http://bigbite-xxx.cloudfront.net/
 ```
